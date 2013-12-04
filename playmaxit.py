@@ -10,7 +10,6 @@
 #import curses # for coloured triangulation
 import os
 import random
-import sys
 
 
 # simple cross platform clear screen
@@ -44,19 +43,19 @@ def printBoard( mboard, msize ):
         print('-- empty board --\n')
         return
 
-    sys.stdout.write('   0 ||')
+    print('   0 ||', end='')
     for col in range(msize):
-        sys.stdout.write('%4d |' %(col+1))
-    sys.stdout.write('\n ------')
+        print('%4d |' %(col+1), end='')
+    print('\n ------', end='')
     for col in range(msize):
-        sys.stdout.write('------')
+        print('------', end='')
     for row in range(msize):
         if (row >= 0):
-            sys.stdout.write('\n%4d ||' %(row+1))
+            print('\n%4d ||' %(row+1), end='')
 
         for col in range(msize):
             #form = '%' + str(max(msize)) + 's'
-            sys.stdout.write('%4s |' %str(mboard[row][col]))
+            print('%4s |' %str(mboard[row][col]), end='')
     print('\n')
     return
 
